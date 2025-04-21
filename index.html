@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop - All in One</title>
+    <style>
+        /* CSS Reset */
+        .hero,.product,h1{text-align:center}footer,nav.navbar{display:flex;background:var(--primary-color)}*{margin:0;padding:0;box-sizing:border-box}:root{--primary-color:#6f4e37f3;--secondary-color:#d2691e;--background-color:#f7f3e9;--text-color:#333;--white:#ffffff;--whitebg:#ffffff92;--transition:all 0.3s ease}.product,.service-card{background:var(--whitebg)}.hamburger,.logo img,.nav-links a,.product,.product button,.social-links a,button[type=submit]{transition:var(--transition)}body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;background-color:var(--background-color);color:var(--text-color);min-height:100vh;display:flex;flex-direction:column}nav.navbar{justify-content:space-between;align-items:center;padding:15px 5%;position:sticky;top:0;height:100px;width:100%;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,.1)}.logo{display:flex;align-items:center}.logo img{width:80px;height:auto}.logo:hover img{transform:scale(1.05)}.nav-links{list-style:none;display:flex;padding:0;gap:20px}.nav-links li{position:relative}.nav-links a{color:var(--white);text-decoration:none;font-size:18px;font-weight:500;padding:8px 12px;border-radius:4px}.nav-links a:hover{background-color:rgba(255,255,255,.2)}.nav-links a.active,button[type=submit]{background-color:var(--secondary-color)}.hamburger{display:none;font-size:30px;color:var(--white);cursor:pointer}.hamburger:hover{transform:scale(1.1)}main{flex:1;padding:20px 5%}h1{font-size:2.5rem;color:var(--primary-color);margin-bottom:20px;font-weight:700;letter-spacing:1px}.product .price,.social-links a:hover,h2{color:var(--secondary-color)}h2{font-size:2rem;margin:30px 0 20px;font-weight:600}h3{font-size:1.5rem;margin:15px 0;font-weight:500}.page-section{display:none;padding:30px 0;min-height:calc(100vh - 180px)}.page-section.active{display:block;animation:.5s fadeIn}@keyframes fadeIn{from{opacity:0}to{opacity:1}}.hero{padding:50px 0}.hero p{font-size:1.2rem;max-width:800px;margin:0 auto}.products,.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px}.about-content,.doorstep-content{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}.product{padding:20px;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.product:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,.15)}.product img{width:100%;max-width:400px;height:250px;object-fit:cover;border-radius:8px;margin-bottom:15px}.product p{color:var(--text-color);margin:10px 0}.footer-column h3,.product button,.social-links a,footer{color:var(--white)}.product .price{font-weight:700;font-size:1.2rem}.product button{background:var(--secondary-color);padding:10px 20px;border:none;cursor:pointer;margin-top:15px;border-radius:5px;font-size:1rem}.about-image img,.service-card{border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,.1)}.product button:hover,button[type=submit]:hover{background:#b35917}.about-content{align-items:center}.about-text{text-align:left}.about-image{text-align:center}.about-image img{max-width:100%}.service-card{padding:25px}.contact{max-width:800px;margin:0 auto}form{display:flex;flex-direction:column;max-width:500px;margin:40px auto 0}input,textarea{margin:10px 0;padding:12px;width:100%;border:1px solid var(--primary-color);border-radius:5px;font-size:1rem}textarea{min-height:150px}button[type=submit]{color:var(--white);padding:12px;border:none;cursor:pointer;font-size:1.1rem;margin-top:20px}footer{justify-content:space-between;padding:40px 5%;margin-top:auto}.footer-column{flex:1;padding:0 20px}.footer-column h3{margin-bottom:20px;font-size:1.3rem}.footer-column p{margin-bottom:10px}.social-links a{margin-right:15px;font-size:1.2rem;text-decoration:none}@media (max-width:1200px){nav.navbar{padding:15px 3%;height:80px}.logo img{width:70px}}@media (max-width:992px){.about-content,.doorstep-content{grid-template-columns:1fr}.about-image{order:-1}}@media (max-width:768px){h1{font-size:2rem}h2{font-size:1.7rem}nav.navbar{height:70px;padding:15px}.nav-links{display:none;flex-direction:column;background:var(--primary-color);width:100%;position:absolute;top:70px;left:0;padding:20px;gap:15px;box-shadow:0 5px 10px rgba(0,0,0,.1)}.nav-links.active{display:flex}.hamburger{display:block}footer{flex-direction:column;gap:30px;padding:30px 15px}.footer-column{padding:0;margin-bottom:20px}.footer-column:last-child{margin-bottom:0}.product img{height:200px}}@media (max-width:576px){h1{font-size:1.8rem}.hero p{font-size:1rem}.products{grid-template-columns:1fr}}
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./logo.png" alt="Coffee Shop Logo" loading="lazy">
+            </div>
+            
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                &#9776;
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a class="nav-link active" data-section="home">Home</a></li>
+                <li><a class="nav-link" data-section="about">About</a></li>
+                <li><a class="nav-link" data-section="services">Services</a></li>
+                <li><a class="nav-link" data-section="doorstep">Doorstep Support</a></li>
+                <li><a class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="page-section active">
+            <div class="hero">
+                <h1>Welcome to Our Coffee Shop</h1>
+                <p>Experience the finest coffee in town, crafted with passion and served with care.</p>
+            </div>
+
+            <h2>Our Best Seller Coffee</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="./img2.jpeg" alt="Espresso Coffee" loading="lazy">
+                    <h3>Espresso</h3>
+                    <p>Strong and rich espresso shot, the purest coffee experience.</p>
+                    <p class="price">₹150</p>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="./img3.jpg" alt="Latte Coffee" loading="lazy">
+                    <h3>Latte</h3>
+                    <p>Creamy and smooth coffee with perfectly steamed milk.</p>
+                    <p class="price">₹180</p>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="./img2.jpeg" alt="Cappuccino Coffee" loading="lazy">
+                    <h3>Cappuccino</h3>
+                    <p>Perfect balance of espresso, steamed milk and foam.</p>
+                    <p class="price">₹200</p>
+                    <button class="cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other sections like About, Services, Doorstep, Contact follow the same pattern -->
+        <section id="about" class="page-section">
+            <h1>About Our Coffee Shop</h1>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Founded in 2000, our coffee shop has been dedicated to bringing the finest coffee experience to our customers...</p>
+                </div>
+                <div class="about-image">
+                    <img src="./logo.png" alt="Our Coffee Shop" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- More sections -->
+
+    </main>
+
+    <footer>
+        <div class="footer-column">
+            <h3>Visit Us</h3>
+            <p>123 Coffee Street<br>Jalandhar, Punjab</p>
+            <p>Open: Mon-Sun 7:00 AM - 9:00 PM</p>
+        </div>
+        <div class="footer-column">
+            <h3>Contact Info</h3>
+            <p>Mobile: 1234567890</p>
+            <p>Email: coffeenow@gmail.com</p>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Your existing JavaScript remains unchanged
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.getElementById("hamburger");
+            const navLinks = document.getElementById("nav-links");
+
+            hamburger.addEventListener("click", function () {
+                navLinks.classList.toggle("active");
+                this.classList.toggle("active");
+            });
+
+            const navLinksList = document.querySelectorAll('.nav-link');
+            const pageSections = document.querySelectorAll('.page-section');
+
+            navLinksList.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    navLinksList.forEach(navLink => navLink.classList.remove('active'));
+                    this.classList.add('active');
+                    pageSections.forEach(section => section.classList.remove('active'));
+                    const sectionId = this.getAttribute('data-section');
+                    document.getElementById(sectionId).classList.add('active');
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    window.scrollTo(0, 0);
+                });
+            });
+
+            document.getElementById('home').classList.add('active');
+        });
+    </script>
+</body>
+</html>
